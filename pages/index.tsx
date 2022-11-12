@@ -23,7 +23,7 @@ const Home: NextPage<{ liff: Liff | null; liffError: string | null }> = ({
         finished todo
       </button>
       <form className={styles.index_form}>
-        <input type="checkbox" checked value="finished" />
+        <input type="checkbox" defaultChecked value="finished" />
         <label>todos</label>
       </form>
     </div>
