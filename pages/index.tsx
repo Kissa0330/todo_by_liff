@@ -5,35 +5,27 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage<{ liff: Liff | null; liffError: string | null }> = ({
   liff,
-  liffError
+  liffError,
 }) => {
   return (
-    <div>
+    <div className={styles.index_div_all}>
       <Head>
-        <title>LIFF App</title>
+        <title>Todo App</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className={styles.main}>
-        <h1>create-liff-app</h1>
-        {liff && <p>LIFF init succeeded.</p>}
-        {liffError && (
-          <>
-            <p>LIFF init failed.</p>
-            <p>
-              <code>{liffError}</code>
-            </p>
-          </>
-        )}
-        <a
-          href="https://developers.line.biz/ja/docs/liff/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          LIFF Documentation
-        </a>
-      </main>
+      <button className={styles.index_button}> add new todo</button>
+      <form className={styles.index_form}>
+        <input type="checkbox" value="finished" />
+        <label>todos</label>
+      </form>
+      <button className={`${styles.index_button} ${styles.none_event}`}>
+        finished todo
+      </button>
+      <form className={styles.index_form}>
+        <input type="checkbox" checked value="finished" />
+        <label>todos</label>
+      </form>
     </div>
   );
 };
